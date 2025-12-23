@@ -8,6 +8,7 @@ import "./index.css";
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelloWorldApp />
+    <FirstApp name={'Lara'}/>
     <FirstApp />
   </StrictMode>,
 )

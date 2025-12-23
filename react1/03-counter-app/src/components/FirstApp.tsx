@@ -1,3 +1,10 @@
+//import PropTypes from "prop-types";
+
+
+type FirstAppProps = {
+  name?: string
+}
+
 const newMessage = {
   title: "Message",
   message: "New message",
@@ -5,8 +12,9 @@ const newMessage = {
 
 const getMessage = ()=> newMessage.message;
 
-export function FirstApp() {
-  const name = "Lara";
+
+export function FirstApp({name= "María"}: FirstAppProps) {
+  //const name = "Lara";
   return (
     <>
       <h1>{name}'s first App</h1>
@@ -15,3 +23,12 @@ export function FirstApp() {
     </>
   );
 }
+
+
+// Alternativa para utilizar types sin TS -> Deben ir al final
+/*FirstApp.propTypes ={
+  name: PropTypes.string.isRequired
+}*/
+/*FirstApp.defaultProps ={
+  name: "María"
+}*/
