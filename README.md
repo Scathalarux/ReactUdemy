@@ -1,8 +1,6 @@
-# React - Ûdemay
+# React - Ûdemy
 
-## Curso 1
-
-### React: De cero a experto
+## Curso 1 - React: De cero a experto
 
 [Enlace del curso](https://www.udemy.com/course/react-cero-experto/?couponCode=CM251223G1#instructor-2)
 
