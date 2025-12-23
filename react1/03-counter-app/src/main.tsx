@@ -1,14 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { HelloWorldApp } from './components/HelloWorldApp'
-import { FirstApp } from './components/FirstApp'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { HelloWorldApp } from "./components/HelloWorldApp";
+import { FirstApp } from "./components/FirstApp";
 import "./index.css";
+import { CounterApp } from "./components/CounterApp";
 
-
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <HelloWorldApp />
-    <FirstApp name={'Lara'}/>
+    <hr />
+    <FirstApp name={"Lara"} />
+    <hr />
     <FirstApp />
-  </StrictMode>,
-)
+    <hr />
+    <CounterApp value={10}/>
+    <hr />
+    <CounterApp/>
+  </StrictMode>
+);
