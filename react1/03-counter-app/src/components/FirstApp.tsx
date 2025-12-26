@@ -2,7 +2,8 @@
 
 
 type FirstAppProps = {
-  name: string
+  name: string,
+  subtitulo?: string,
 }
 
 const newMessage = {
@@ -13,13 +14,15 @@ const newMessage = {
 const getMessage = ()=> newMessage.message;
 
 
-export function FirstApp({name= "María"}: FirstAppProps) {
+export function FirstApp({name= "María", subtitulo}: FirstAppProps) {
   //const name = "Lara";
   return (
     <>
-      <h1>{name}'s first App</h1>
+      <h1 data-testid="test-title">{name}'s first App</h1>
       <code>{JSON.stringify(newMessage)}</code>
       <p>Message: {getMessage()}</p>
+      <p>{subtitulo}</p>
+      <p>{subtitulo}</p>
     </>
   );
 }
