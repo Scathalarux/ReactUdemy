@@ -2,7 +2,7 @@
 
 
 type FirstAppProps = {
-  name?: string
+  name: string
 }
 
 const newMessage = {
