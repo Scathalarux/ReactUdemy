@@ -1,10 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { GifExpertApp } from './GifExpertApp'
+import { ImagesApp } from './ImagesApp'
 import './styles.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <GifExpertApp />
+    <ImagesApp />
   </StrictMode>,
 )
