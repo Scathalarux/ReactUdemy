@@ -28,7 +28,7 @@ export function CounterApp2({ value = 10 }: CounterApp2Props) {
       <h2> {contador} </h2>
       <button onClick={handleAdd}> +1 </button>
       <button onClick={handleSubtract}> -1 </button>
-      <button onClick={handleReset}> Reset </button>
+      <button aria-label="btnReset" onClick={handleReset}> Reset </button>
     </>
   );
 }
