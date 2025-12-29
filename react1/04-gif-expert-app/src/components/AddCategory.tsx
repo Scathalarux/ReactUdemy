@@ -1,10 +1,10 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 
 type AddCategoryProps = {
-  setCategories: (categories:string[]) => void
+  onNewCategorie: (newCategorie:string) => void
 }
 
-export function AddCategory({setCategories}:AddCategoryProps) {
+export function AddCategory({onNewCategorie}:AddCategoryProps) {
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -13,8 +13,13 @@ export function AddCategory({setCategories}:AddCategoryProps) {
   };
   const handleSubmit = (event: FormEvent<HTMLFormElement>)=>{
     event.preventDefault();
-    if(inputValue.trim().length <= 2) return;
-    setCategories((prevCategories:string[]) => [inputValue, ...prevCategories]);
+
+    const newCategorie = inputValue.trim();
+
+    if(newCategorie.length <= 2) return;
+    
+    onNewCategorie(newCategorie);
+    
     setInputValue("");
   }
 
