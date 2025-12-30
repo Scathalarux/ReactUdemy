@@ -5,7 +5,7 @@ import { getImagesByQuery } from "../actions/get-images-by-query.action";
 //Podemos ponerlo fuera para que no se rerenderice cada vez que cambia de estado
 //const imageCache: Record<string, Image[]> = {};
 
-export function useImage() {
+export function useImages() {
   const [searches, setSearches] = useState<string[]>([]);
   const [images, setImages] = useState<Image[]>([]);
   const imageCache = useRef<Record<string, Image[]>>({});
@@ -18,6 +18,8 @@ export function useImage() {
 
     const images = await getImagesByQuery(term);
     setImages(images);
+    //Añadimos elementos a la pseudo caché
+    imageCache.current[term] = images;
   };
 
   const handleSearch = async (query: string) => {

@@ -34,7 +34,7 @@ export function SearchBar({
     //DEBOUNCE
     const timeoutSearch = setTimeout(() => {
       onNewSearch(inputValue);
-    }, 500);
+    }, 700);
 
     return () => clearTimeout(timeoutSearch);
   }, [inputValue]);

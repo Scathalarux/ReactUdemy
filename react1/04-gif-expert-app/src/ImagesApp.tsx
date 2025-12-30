@@ -3,10 +3,10 @@ import { CustomHeader } from "./shared/components/CustomHeader";
 import { PreviousSearchers } from "./images/components/PreviousSearchers";
 import { ImageList } from "./images/components/ImageList";
 
-import { useImage } from "./images/hooks/useImages";
+import { useImages } from "./images/hooks/useImages";
 
 export function ImagesApp() {
-  const { images, searches, handlePrevSearchClick, handleSearch } = useImage();
+  const { images, searches, handlePrevSearchClick, handleSearch } = useImages();
 
   return (
     <>
