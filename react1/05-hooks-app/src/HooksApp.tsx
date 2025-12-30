@@ -1,9 +1,8 @@
-import { TrafficLight } from "./01-useState/TrafficLight";
-
 export function HooksApp() {
   return (
     <div className="bg-gradient">
-      <TrafficLight />
+      <h1 className="text-3xl">Hola Mundo</h1>
+
     </div>
   );
 }
