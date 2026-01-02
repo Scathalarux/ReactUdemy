@@ -11,10 +11,11 @@ import { TaskApp } from "./05-useReducer/TaskApp";
 import { ScrambleWordsUseState } from "./05-useReducer/ScrambleWordsUseState";
 import { ScrambleWordsUseReducer } from "./05-useReducer/ScrambleWordsUseReducer";
 import { MemoHook } from "./06-memos/MemoHook";
-*/
 import { MemoCounter } from "./06-memos/MemoCounter";
+*/
 
 import "./index.css";
+import { InstagromApp } from "./07-useOptimistic/InstagromApp";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -28,6 +29,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <ScrambleWordsUseState /> */}
     {/* <ScrambleWordsUseReducer /> */}
     {/* <MemoHook /> */}
-    <MemoCounter />
+    {/* <MemoCounter /> */}
+    <InstagromApp />
   </StrictMode>
 );
