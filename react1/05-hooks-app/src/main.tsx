@@ -9,9 +9,10 @@ import { PokemonPage } from "./03-examples/PokemonPage";
 import { FocusScreen } from "./04-useRef/FocusScreen";
 import { TaskApp } from "./05-useReducer/TaskApp";
 import { ScrambleWordsUseState } from "./05-useReducer/ScrambleWordsUseState";
-*/
-
 import { ScrambleWordsUseReducer } from "./05-useReducer/ScrambleWordsUseReducer";
+*/
+import { MemoHook } from "./06-memos/MemoHook";
+
 import "./index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -24,7 +25,8 @@ createRoot(document.getElementById("root")!).render(
     {/* <FocusScreen /> */}
     {/* <TaskApp /> */}
     {/* <ScrambleWordsUseState /> */}
-    <ScrambleWordsUseReducer />
+    {/* <ScrambleWordsUseReducer /> */}
+    <MemoHook />
     
   </StrictMode>
 );
