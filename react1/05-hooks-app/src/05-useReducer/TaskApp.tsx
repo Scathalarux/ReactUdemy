@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getTasksInitialState, taskReducer } from "./reducer/tasksReducer";
-import { json } from "stream/consumers";
 
 export type Todo = {
   id: number;
