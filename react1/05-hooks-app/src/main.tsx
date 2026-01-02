@@ -12,17 +12,18 @@ import { ScrambleWordsUseState } from "./05-useReducer/ScrambleWordsUseState";
 import { ScrambleWordsUseReducer } from "./05-useReducer/ScrambleWordsUseReducer";
 import { MemoHook } from "./06-memos/MemoHook";
 import { MemoCounter } from "./06-memos/MemoCounter";
+import { Toaster } from "sonner";
 import { InstagromApp } from "./07-useOptimistic/InstagromApp";
+import { ClientInformation } from "./08-use-suspense/ClientInformation";
+import { getUser } from "./08-use-suspense/api/get-user.action";
 */
 
 import "./index.css";
-import { Toaster } from "sonner";
-import { ClientInformation } from "./08-use-suspense/ClientInformation";
-import { getUser } from "./08-use-suspense/api/get-user.action";
+import { ProfessionalApp } from "./09-useContext/ProfessionalApp";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Toaster />
+    {/* <Toaster /> */}
     {/* <HooksApp /> */}
     {/* <TrafficLight /> */}
     {/* <TrafficLightWithEffect /> */}
@@ -35,7 +36,7 @@ createRoot(document.getElementById("root")!).render(
     {/* <MemoHook /> */}
     {/* <MemoCounter /> */}
     {/* <InstagromApp /> */}
-    <Suspense
+    {/* <Suspense
       fallback={
         <div className="bg-gradient flex flex-col gap-4">
           <h2 className="text-4xl font-thin text-white">Cargando...</h2>
@@ -44,6 +45,7 @@ createRoot(document.getElementById("root")!).render(
       }
     >
       <ClientInformation getUser={getUser(1)} />
-    </Suspense>
+    </Suspense> */}
+    <ProfessionalApp />
   </StrictMode>
 );
