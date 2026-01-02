@@ -1,4 +1,5 @@
-import { useOptimistic, useState } from "react";
+import { useOptimistic, useState, useTransition } from "react";
+import { toast } from "sonner";
 
 type Comment = {
   id: string;
@@ -6,7 +7,8 @@ type Comment = {
   optimistic?: boolean;
 };
 
-export const InstagromApp = () => {
+export function InstagromApp() {
+  const [isPending, startTransition] = useTransition();
   const [comments, setComments] = useState<Comment[]>([
     { id: crypto.randomUUID(), text: "¡Gran foto!" },
     { id: crypto.randomUUID(), text: "Me encanta 🧡" },
@@ -26,18 +28,29 @@ export const InstagromApp = () => {
     }
   );
 
-  const handleAddComment = async (event: FormData) => {
+  const handleAddComment = (event: FormData) => {
     const message = event.get("post-message") as string;
 
     addOptimisticComment(message);
 
-    //Simular la latencia del save message (petición http)
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    startTransition(async () => {
+      //Simular la latencia del save message (petición http)
+      await new Promise((resolve) => setTimeout(resolve, 3000));
 
-    setComments((prev) => [
-      ...prev,
-      { id: crypto.randomUUID(), text: message },
-    ]);
+      setComments((prev) => [
+        ...prev,
+        { id: crypto.randomUUID(), text: message },
+      ]);
+
+      //opcion para volver al estado inicial si surgiera un problema
+      /*setComments((prev) => prev);
+      toast.error("Error al agregar el comentario", {
+        description: "Inténtelo de nuevo",
+        duration: 5_000,
+        position: "top-right",
+        action: { label: "Cerrar", onClick: () => toast.dismiss() },
+      });*/
+    });
   };
 
   return (
@@ -83,12 +96,12 @@ export const InstagromApp = () => {
         />
         <button
           type="submit"
-          disabled={false}
-          className="bg-blue-500 text-white p-2 rounded-md w-full"
+          disabled={isPending}
+          className="bg-blue-500 text-white p-2 rounded-md w-full disabled:bg-gray-600 disabled:hover:cursor-progress"
         >
           Enviar
         </button>
       </form>
     </div>
   );
-};
+}

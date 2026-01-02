@@ -16,9 +16,11 @@ import { MemoCounter } from "./06-memos/MemoCounter";
 
 import "./index.css";
 import { InstagromApp } from "./07-useOptimistic/InstagromApp";
+import { Toaster } from "sonner";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Toaster />
     {/* <HooksApp /> */}
     {/* <TrafficLight /> */}
     {/* <TrafficLightWithEffect /> */}
